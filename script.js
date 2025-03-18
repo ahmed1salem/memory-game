@@ -5,7 +5,6 @@ let moves = 0;
 let time = 0;
 let timer;
 
-// عناصر الصوت
 const flipSound = document.getElementById('flipSound');
 const matchSound = document.getElementById('matchSound');
 const winSound = document.getElementById('winSound');
@@ -16,7 +15,7 @@ function initGame() {
     grid.innerHTML = '';
     cards.sort(() => Math.random() - 0.5);
 
-    cards.forEach((emoji, index) => {
+    cards.forEach((emoji) => {
         const card = document.createElement('div');
         card.className = 'card';
         card.dataset.value = emoji;
