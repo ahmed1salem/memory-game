@@ -1,16 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background: #2c3e50;
+    background: url('designer25.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* تحسين وضوح النص على الخلفية */
 }
 
 .container {
     text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* خلفية شبه شفافة */
+    padding: 20px;
+    border-radius: 15px;
 }
 
 h1 {
@@ -34,7 +39,7 @@ h1 {
 .card {
     width: 100px;
     height: 100px;
-    background: #3498db;
+    background: rgba(52, 152, 219, 0.9);
     border-radius: 10px;
     cursor: pointer;
     display: flex;
@@ -46,7 +51,7 @@ h1 {
 }
 
 .card.flipped {
-    background: #e74c3c;
+    background: rgba(231, 76, 60, 0.9);
     transform: rotateY(180deg);
 }
 
@@ -59,6 +64,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 20px;
 }
 
 button:hover {
