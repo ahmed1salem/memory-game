@@ -1,53 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgd5CQTa_421BAmo-GS1huNQXDbSTvtp7rRYIJRhvZ0BXd4CKIlKmkaTh56SMwjrTTndehCuY2x1XXyUQYC1x9sbGNIaPbwEIzmhXe-XrjseiGgdzB6yduqQaSfuIMXoZWsDiyZWkcVxLUczdC6PeVbQ2jD8FsZBlkHrXRkr5INH4uHeJvVtBIiPeKcECs/s1792/designer25.jpeg') no-repeat center center fixed;
     background-size: cover;
     color: white;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* تحسين وضوح النص على الخلفية */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .container {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7); /* خلفية شبه شفافة */
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem;
     border-radius: 15px;
+    width: 95%;
+    max-width: 600px;
+    margin: 1rem;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
 }
 
 .stats {
-    margin-bottom: 20px;
-    font-size: 1.2em;
+    display: flex;
+    justify-content: space-around;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 1.5rem;
 }
 
 .game-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 20px auto;
-    max-width: 600px;
+    gap: 0.8rem;
+    margin: 1rem auto;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    aspect-ratio: 1;
     background: rgba(52, 152, 219, 0.9);
     border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    transition: transform 0.4s;
 }
 
 .card.flipped {
@@ -56,17 +63,37 @@ h1 {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1.2em;
+    padding: 0.8rem 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     background: #27ae60;
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 20px;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 200px;
 }
 
 button:hover {
     background: #219a52;
+}
+
+/* تكيف مع الجوالات الصغيرة (عرض أقل من 480px) */
+@media (max-width: 480px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .card {
+        font-size: 1.2rem;
+    }
+}
+
+/* تكيف مع التابلت (عرض بين 481px و 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .game-grid {
+        gap: 0.6rem;
+    }
 }
